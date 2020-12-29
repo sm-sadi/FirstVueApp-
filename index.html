@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./Assets/Style.css">
+</head>
+<body>
+
+  <h1 class="color-change-3x"> First Vue App</h1>
+ 
+    <div id="app">
+      <h1 class="cart">
+        cart <span>{{cart}}</span>
+      </h1>
+      <!-- col 1 -->
+      <div class="col-1">
+        <h1>{{ NameOfPro}}</h1>
+      
+        <img :src="image" alt="image" class="jbl">
+      <h5>Lorem ipsum dolor sit amet.</h5>
+      </div>
+      
+      <!-- col 2 -->
+    <div class="col-2">
+      <p> {{description}}</p>
+      
+      <h4 v-if="instock > 10 ">In stock </h4>
+      <h4 v-else-if="instock <= 10 && instock > 0"> Almost SoldOut </h4>
+      <h4 v-else>Out of stock </h4>
+      <!-- <p v-if="onsale">On sale </p> -->
+
+      <h3>Features : </h3>
+      <ul class="features">
+        <li v-for="detail in details">{{detail}}</li>
+      </ul>
+      <div class="color-box"
+            v-for="varient in varients" 
+            v-on:mouseover="updateImg(varient.image)" 
+            v-bind:key="varient.id">
+            {{varient.type}}
+      </div>
+      <h3>Sizes</h3>
+      <ul >
+        <li class="color-box siz" 
+        v-for="size in sizes"
+        >{{size}}
+      </li>
+      </ul>
+        <button class="Btn1" v-on:click="addToCart" class="btn"> Add to Cart</button>
+        <button class="Btn1" v-on:click="removeToCart" class="btn"> Remove Cart</button>
+        
+
+    </div> <!--end of col-2-->
+
+
+
+
+
+
+
+      </div>      <!--end of app-->                  
+      
+
+
+
+
+
+
+
+
+
+
+    <div id="newone" >
+      <h1>{{}}</h1>
+    </div>
+
+
+    
+    <script src="main.js"> </script>
+  <!-- monut app  -->
+
+</body>
+</html>

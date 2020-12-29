@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@next"></script>
+ <!-- custom css  -->
+ <link rel="stylesheet" href="./style.css">
+
+    <title>Booklist</title>
+  </head>
+  <body>
+    <h1 class="text-center  p-2 bg-dark text-white">Favourite Laptop</h1>
+
+    <!-- vue  -->
+<div id="app" class="p-4">
+<h1 class="text-center">  {{title}}</h1>
+
+<hr>
+<div class="container">
+    <div class="row m-2" v-for="product in products" v-bind:class="{fav : product.isFav}">
+        <div class="col d-flex justify-content-between p-4">
+            <img class=" img-fluid  img-custom  " :src="product.url" :alt="product.url">
+            <h5 class="display-5">{{product.brand}}</h5>
+            
+            <button class="btn btn-success btn-custom" @click="addtoFav(product)">
+                <span v-if="product.isFav == false"> add to Fav </span>
+                <span v-else> Remove from Fave</span>
+            </button>
+        </div>
+        
+        
+    </div>
+</div>
+
+</div>
+<!-- end of vue  -->
+   
+
+    <!--  Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- font awesome kit  -->
+    <script src="https://kit.fontawesome.com/ec0fbcc289.js" crossorigin="anonymous"></script>
+<!-- my custom js  -->
+    <script src="./app.js"></script>
+  </body>
+</html>
